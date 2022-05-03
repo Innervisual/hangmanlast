@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 namespace hangmanlast
@@ -58,6 +58,12 @@ namespace hangmanlast
                 }
 
             }
+
+            if (wrongLetters.ToString().Contains(Choice))
+            {
+                newChar=false;
+            }
+
 
             if (newChar)
             {
@@ -122,6 +128,7 @@ namespace hangmanlast
             else
             {
                 Console.WriteLine("You loose!");
+                Console.ReadKey();
                 Cont=false;
             }
 
@@ -152,12 +159,9 @@ namespace hangmanlast
                 {
                     cont=WinCheck();
                 }
-
             }
-
             Console.WriteLine("The correct word was: " + word.ToString());
+            Console.ReadKey();
         }
-
-
     }
 }
